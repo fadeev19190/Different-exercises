@@ -1,0 +1,41 @@
+from pprint import pprint
+sentence = 'This is a common interview question'
+
+
+def counter(sent):
+    counter = {}
+    for char in sent:
+        if char not in counter:
+            count = 1
+            counter[char] = count
+        else:
+            cont_count = int(counter.get(char))
+            cont_count += 1
+            counter[char] = cont_count
+    return counter
+
+
+seq_of_char = counter(sentence)
+
+
+def find_max(seq):
+    max_count = 0
+    max_char = []
+    for char in seq:
+        if seq[char] >= max_count:
+            max_count = seq[char]
+    for char in seq:
+        if seq[char] == max_count:
+            max_char.append(char)
+    return max_char, max_count
+
+
+pprint(f"The most common characters are: {find_max(seq_of_char)}")
+
+
+def sorting(seq):
+    seq_tuple = seq.items()
+    return sorted(seq_tuple, key=lambda x: x[1])
+
+
+print(f"The sequence of characters in ascending order: {sorting(seq_of_char)}")
