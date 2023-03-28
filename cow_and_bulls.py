@@ -1,7 +1,6 @@
 import random
 random_number = random.randint(999, 10000)
 random_number_list = [int(i) for i in str(random_number)]
-print(random_number_list)
 
 
 def cow_and_bulls():
