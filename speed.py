@@ -2,7 +2,6 @@ def check_speed():
     allowed_speed = 70
     above_speed = 5
     demerit = 0
-   # ride_license = True
     while demerit < 12:
         speed = int(input("Your speed: "))
         if speed <= allowed_speed:
@@ -17,4 +16,6 @@ def check_speed():
 
 
 check = check_speed()
-print(f"Points: {check}")
+for value in check:
+    print(f"Points: {value}")
+
